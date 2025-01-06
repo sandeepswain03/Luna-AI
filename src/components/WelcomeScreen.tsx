@@ -21,7 +21,7 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
   const handleCopy = (question: string, index: number) => {
     navigator.clipboard.writeText(question).then(() => {
       setCopiedIndex(index);
-      setTimeout(() => setCopiedIndex(null), 2000); // Reset after 2 seconds
+      setTimeout(() => setCopiedIndex(null), 1000);
     });
   };
   return (
@@ -54,10 +54,10 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl mx-auto pb-8">
           {[
-            "Which type of content has the highest likes?",
-            "How many total categories do we have?",
-            "How many posts have average likes more than reels?",
-            "Which category has more views but fewer likes compared to others?",
+            "Which post type has the highest total engagement?",
+            "Do carousel posts outperform static images in likes?",
+            "Which format generates the most comments overall?",
+            "How do reels compare to other formats in shares?",
           ].map((question, index) => (
             <div
               key={index}
@@ -68,15 +68,15 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
                   <Button
                     variant="ghost"
                     size="icon"
-                    className="w-8 h-8 rounded-lg hover:bg-zinc-800"
+                    className="w-8 h-8 rounded-lg hover:bg-zinc-800 "
                     onClick={() => {
                       handleCopy(question, index);
                     }}
                   >
                     {copiedIndex === index ? (
-                      <Check className="w-4 h-4" />
+                      <Check className="w-4 h-4 text-zinc-200" />
                     ) : (
-                      <Copy className="w-4 h-4" />
+                      <Copy className="w-4 h-4 text-zinc-200" />
                     )}
                   </Button>
                 </TooltipTrigger>

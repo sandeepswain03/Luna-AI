@@ -57,7 +57,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
           <div className="flex-1 overflow-hidden flex flex-col">
             <Button
               variant="outline"
-              className="w-full justify-start text-white mb-4"
+              className="w-full justify-start text-white mb-4 bg-zinc-800"
               onClick={onNewChat}
             >
               <Sparkles className="w-4 h-4 mr-2" />

@@ -23,7 +23,7 @@ export const MessageItem: React.FC<MessageItemProps> = ({ message }) => {
   const handleCopy = () => {
     navigator.clipboard.writeText(message.content).then(() => {
       setIsCopied(true);
-      setTimeout(() => setIsCopied(false), 2000); // Reset after 2 seconds
+      setTimeout(() => setIsCopied(false), 1000);
     });
   };
 

@@ -69,7 +69,7 @@ export default function Chat() {
   const createNewChat = () => {
     const newChat: Chat = {
       id: uuidv4(),
-      name: `New Chat ${chats.length + 1}`,
+      name: `${new Date().toLocaleString()}`,
       messages: [
         {
           role: "assistant",
